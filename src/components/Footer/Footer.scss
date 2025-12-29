@@ -1,0 +1,27 @@
+footer{
+  width: 100%;
+  padding: 100px 5% 80px;
+  color: var(--light-color);
+  background-color: var(--dark-color);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4rem;
+  text-align: center;
+
+
+
+  .socials{
+    display: flex;
+    color: var(--light-color);
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    // background: red;
+
+    a{
+      font-size: 2.4rem;
+    }
+  }
+}

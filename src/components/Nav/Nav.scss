@@ -1,0 +1,191 @@
+nav{ 
+  width: 100%;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 40px 5%;
+
+  
+  .logo{
+    display: flex;
+    align-items: center;
+    gap: 0.68rem;
+    font-size: 2.4rem;
+    font-weight: 500;
+    z-index: 100;
+  }
+  
+  
+  ul{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    z-index: 1000;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: all 0.4s ease-in-out;
+    
+    &.sticky{
+
+      @media screen and (min-width: 900px) {
+        position: fixed;
+        // top: 1.5rem; // Position when sticky
+        // border: 1px solid rgba(255, 255, 255, 0.08);
+        // color: hsl(0 10% 90%);
+        // color: gray;
+        transform: translate(-50%, 40px);
+        border-radius: 100vw;
+        overflow: hidden;
+        background-color: hsl(100 100% 100% / 0.48);
+        // background: rgba(255, 255, 255, 0.4);
+        transition: all 0.4s ease-in-out;
+        // background: red;
+        padding: 0.5rem .5rem; // Adjust padding as needed
+        box-shadow: 0 0 0.75rem hsl(0 0% 0% / 0.3);
+        box-shadow: 
+        rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+
+        li{
+          a{
+            background-color: rgba(255,255,255,0.25);
+            // padding-block: 1.2rem;
+            border-radius: 100vw;
+          }
+        }
+      }
+    }
+
+    @media (max-width: 900px) {
+      width: 100vw;
+      height: 100vh;
+      padding: 6rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--dark-color);
+      position: fixed;
+      // right: -100vw;
+      transform: translateX(50%);
+      top: 0 !important;
+      z-index: 90;
+      transition: all 0.4s ease-in-out;
+      border-radius: 0 !important;
+    }
+
+    
+    li{
+      // height: 100%;
+      
+      a{
+        font-size: 1.6rem;
+        font-weight: 300;
+        font-family: "Montserrat", sans-serif;
+        // text-transform: uppercase;
+        padding: 1rem 1.48rem;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        border-radius: 100vw;
+        transition: all 0.2s ease-in-out;
+        
+        &:hover,
+        &.active {
+          background: rgba(255, 255, 255, 0.68);
+          color: #242424;
+          // font-weight: 500;
+        }
+      }
+    }
+  }
+  
+  
+  
+  #menuBtn{
+    display: none;
+
+    @media (max-width: 900px) {
+
+      &:checked ~ ul {
+       transform: translateX(-50%);
+      }
+      &:checked ~ .menuBtn{
+        position: fixed;
+        right: 5%;
+      }
+      &:checked ~ .menuBtn span:nth-child(1){
+        transform: rotate(45deg) translate(4.5px, 4.5px);
+      }
+      &:checked ~ .menuBtn span:nth-child(2){
+        opacity: 0;
+      }
+      &:checked~.menuBtn span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+      }
+    }
+  }
+  
+  .menuBtn {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1000;
+
+    @media (max-width: 900px) {
+      display: flex;
+    }
+    
+    
+    span {
+      width: 24px;
+      height: 2px;
+      display: flex;
+      background: darkslateblue;
+      border-radius: 10px;
+      transition: all 0.2s ease-in-out;
+    }
+  }
+  
+  
+  
+  .cart {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2000;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1rem 1.5rem;
+    border-radius: 30px;
+    transition: all 0.4s ease-in-out;
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    // border: 0.5px solid rgba(255,255,255,0.2);
+    box-shadow: 
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+
+    @media (max-width: 900px) {
+      display: none;
+    }
+    
+    &:hover {
+      // background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 
+      rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+      rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+      rgba(10, 37, 64, 0.35) 0px 2px 6px 0px inset;
+    }
+  }
+}
