@@ -17,7 +17,6 @@ const Nav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return() => {
       window.removeEventListener("scroll", handleScroll);
     }
@@ -28,7 +27,6 @@ const Nav = () => {
     <nav>
       <Link className="logo" to={"/"}>
         <GiVineFlower />
-        {/* Corty */}
       </Link>
 
       <input type="checkbox" id="menuBtn" />
@@ -38,11 +36,11 @@ const Nav = () => {
         <span></span>
       </label>
 
-      <ul className={isSticky ? "sticky" : ""}>
-          {/* <li><a href="/about"> About </a></li> */}
-          <li><Link to={"/case-studies"}> Case Studies </Link></li>
-          <li><Link to={"/contact"}> Contact </Link></li>
-          <li><Link to={"/services"}> Services </Link></li>
+      <ul className={` ${isSticky ? "sticky" : ""} `}>
+        {/* <li><a href="/about"> About </a></li> */}
+        <li><Link to="/case-studies"> Case Studies </Link></li>
+        <li><Link to="/contact"> Contact </Link></li>
+        <li><Link to="/services"> Services </Link></li>
       </ul>
 
 
