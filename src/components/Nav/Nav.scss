@@ -31,6 +31,7 @@ nav{
     -webkit-backdrop-filter: blur(15px);
     transition: all 0.4s ease-in-out;
     
+    
     &.sticky{
 
       @media screen and (min-width: 900px) {
